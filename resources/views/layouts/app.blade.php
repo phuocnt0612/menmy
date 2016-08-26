@@ -47,7 +47,7 @@
                                       @if (Auth::guest())
                                         InfyOm
                                     @else
-                                        {{ ucwords(Auth::user()->name)}}
+                                    {!! Auth::user()->name !!}
                                     @endif
                                 </span>
                             </a>
@@ -60,9 +60,9 @@
                                         @if (Auth::guest())
                                             InfyOm
                                         @else
-                                            {{ ucwords(Auth::user()->name)}}
+                                            {!! Auth::user()->name !!}
                                         @endif
-                                        <small>Member since {!! Auth::user()->created_at->format('M, Y') !!}</small>
+                                        <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
@@ -71,7 +71,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -83,14 +83,14 @@
 
         <!-- Left side column. contains the logo and sidebar -->
         @include('layouts.sidebar')
-                <!-- Content Wrapper. Contains page content -->
+        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @yield('content')
         </div>
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2016 <a href="#">InfyOm Laravel Generator</a>.</strong> All rights reserved.
+            <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -109,7 +109,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{!! url('/') !!}">
                     InfyOm Generator
                 </a>
             </div>
@@ -117,15 +117,15 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{!! url('/home') !!}">Home</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{!! url('/login') !!}">Login</a></li>
+                        <li><a href="{!! url('/register') !!}">Register</a></li>
                     @endif
                 </ul>
             </div>
@@ -142,7 +142,8 @@
         </div>
     </div>
     @endif
-            <!-- jQuery 2.1.4 -->
+
+    <!-- jQuery 2.1.4 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
