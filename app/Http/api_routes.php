@@ -9,5 +9,6 @@
 |
 */
 
+Route::resource('users', 'UserAPIController');
 
-
+Route::resource('companies', 'CompanyAPIController');
